@@ -23,7 +23,7 @@ class MainHome extends ConsumerWidget {
                     runSpacing: 25,
                     children: [
                       GestureDetector(
-                        onTap: () => context.push('/infinityScroll'),
+                        onTap: () => context.push('/InfinityScroll'),
                         child: FractionallySizedBox(
                           widthFactor: 1,
                           child: Container(

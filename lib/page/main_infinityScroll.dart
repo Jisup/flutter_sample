@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sample/config/static_list_config.dart';
 import 'package:go_router/go_router.dart';
 
 class MainInfinityScroll extends ConsumerWidget {
@@ -21,33 +22,18 @@ class MainInfinityScroll extends ConsumerWidget {
                 child: SingleChildScrollView(
                   child: Wrap(
                     runSpacing: 25,
-                    children: [
-                      GestureDetector(
-                        onTap: () =>
-                            context.push('/infinityScroll/scrollController'),
+                    children: StaticListConfig.InfinityScrollDemoList.map(
+                      (demo) => GestureDetector(
+                        onTap: () => context.push(demo['path']),
                         child: FractionallySizedBox(
                           widthFactor: 1,
                           child: Container(
                             alignment: Alignment.center,
-                            child: Text(
-                              'with scrollController',
-                            ),
+                            child: Text(demo['text']),
                           ),
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () => context.push('/infinityScroll/listener'),
-                        child: FractionallySizedBox(
-                          widthFactor: 1,
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: Text(
-                              'with listener and scrollController',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ).toList(),
                   ),
                 ),
               ));
