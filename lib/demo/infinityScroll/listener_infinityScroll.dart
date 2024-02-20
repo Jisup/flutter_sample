@@ -3,48 +3,21 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_sample/entity/photo.dart';
 import 'package:flutter_sample/util/dio_instance.dart';
-
-class Photo {
-  int? albumId;
-  int? id;
-  String? title;
-  String? url;
-  String? thumbnailUrl;
-
-  Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
-
-  Photo.fromJson(Map<String, dynamic> json) {
-    albumId = json['albumId'];
-    id = json['id'];
-    title = json['title'];
-    url = json['url'];
-    thumbnailUrl = json['thumbnailUrl'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['albumId'] = this.albumId;
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['url'] = this.url;
-    data['thumbnailUrl'] = this.thumbnailUrl;
-    return data;
-  }
-}
 
 final photoListProvider = StateProvider((ref) => <Photo>[]);
 
-class ListViewInfinityScroll extends ConsumerStatefulWidget {
-  const ListViewInfinityScroll({super.key});
+class ListenerInfinityScroll extends ConsumerStatefulWidget {
+  const ListenerInfinityScroll({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _ListViewInfinityScrollState();
+      _ListenerInfinityScrollState();
 }
 
-class _ListViewInfinityScrollState
-    extends ConsumerState<ListViewInfinityScroll> {
+class _ListenerInfinityScrollState
+    extends ConsumerState<ListenerInfinityScroll> {
   double pullHeight = 0.0;
   double contentHeight = 200.0;
   double scrollVelocity = 2.4;
@@ -77,7 +50,7 @@ class _ListViewInfinityScrollState
     }
   }
 
-  _ListViewInfinityScrollState() {
+  _ListenerInfinityScrollState() {
     startIdx = 0;
     endIdx = 20;
     _fetchPhotos();
@@ -87,12 +60,6 @@ class _ListViewInfinityScrollState
   void initState() {
     super.initState();
     _scrollController = ScrollController();
-    _scrollController.addListener(_onScroll);
-  }
-
-  void _onScroll() {
-    final maxScroll = _scrollController.position.maxScrollExtent;
-    final currentScroll = _scrollController.position.pixels;
   }
 
   @override
@@ -111,7 +78,8 @@ class _ListViewInfinityScrollState
     return Listener(
       onPointerMove: (event) {
         if (event.delta.dy >= 0) return;
-        if (_scrollController.position.maxScrollExtent - contentHeight <
+        if (_scrollController.position.maxScrollExtent !=
+            // if (_scrollController.position.maxScrollExtent - contentHeight <
             _scrollController.position.pixels) return;
         setState(() {
           pullHeight += -event.delta.dy;
@@ -123,16 +91,10 @@ class _ListViewInfinityScrollState
             pullHeight = contentHeight;
           });
           await _fetchPhotos();
-          Timer(Duration(milliseconds: 1000), () {
-            setState(() {
-              pullHeight = 0;
-            });
-          });
-        } else {
-          setState(() {
-            pullHeight = 0;
-          });
         }
+        setState(() {
+          pullHeight = 0;
+        });
       },
       child: Scaffold(
         appBar: AppBar(),

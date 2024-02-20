@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class MainHome extends ConsumerWidget {
-  const MainHome({super.key});
+class MainInfinityScroll extends ConsumerWidget {
+  const MainInfinityScroll({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,13 +23,26 @@ class MainHome extends ConsumerWidget {
                     runSpacing: 25,
                     children: [
                       GestureDetector(
-                        onTap: () => context.push('/infinityScroll'),
+                        onTap: () =>
+                            context.push('/infinityScroll/scrollController'),
                         child: FractionallySizedBox(
                           widthFactor: 1,
                           child: Container(
                             alignment: Alignment.center,
                             child: Text(
-                              'InfinityScroll Demo',
+                              'with scrollController',
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () => context.push('/infinityScroll/listener'),
+                        child: FractionallySizedBox(
+                          widthFactor: 1,
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'with listener and scrollController',
                             ),
                           ),
                         ),

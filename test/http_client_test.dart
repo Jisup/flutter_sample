@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_sample/demo/infinityScroll/ListView_infinityScroll.dart';
+import 'package:flutter_sample/entity/photo.dart';
 import 'package:flutter_sample/util/dio_instance.dart';
 import 'package:flutter_test/flutter_test.dart';
 
