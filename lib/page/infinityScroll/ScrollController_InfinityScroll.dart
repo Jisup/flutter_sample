@@ -26,11 +26,11 @@ class _ScrollControllerInfinifyScrollState
 
   int startIdx = 0, endIdx = 20, pixed = 20;
 
-  late List<Photo> photoList = <Photo>[];
-
   bool isLoading = false;
 
   Future<void> _fetchPhotos() async {
+    List<Photo> photoList = <Photo>[];
+
     isLoading = true;
     Dio dio = DioInstance().dio;
     try {
@@ -85,7 +85,6 @@ class _ScrollControllerInfinifyScrollState
   void dispose() {
     startIdx = 0;
     endIdx = 20;
-    photoList = [];
     _scrollController.dispose();
     super.dispose();
   }

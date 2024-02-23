@@ -1,6 +1,8 @@
-import 'package:flutter_sample/page/infinityScroll/FlatList_InfinityScrll.dart';
+import 'package:flutter_sample/page/infinityCarousel/PageView_Carousel.dart';
+import 'package:flutter_sample/page/infinityScroll/FlatList_InfinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/InfinityScrollPagination_infinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/Listener_InfinityScroll.dart';
+import 'package:flutter_sample/page/main_infinityCarousel.dart';
 import 'package:flutter_sample/page/main_infinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/ScrollController_InfinityScroll.dart';
 import 'package:flutter_sample/main_home.dart';
@@ -45,7 +47,20 @@ GoRouter mainRouter = GoRouter(
                   NoTransitionPage(child: FlatListInfinityScrll()),
             ),
           ],
-        )
+        ),
+        GoRoute(
+            path: 'InfinityCarousel',
+            name: 'InfinityCarousel',
+            pageBuilder: (context, state) =>
+                NoTransitionPage(child: MainInfinityCarousel()),
+            routes: [
+              GoRoute(
+                path: 'PageView',
+                name: 'PageView_InfinityCarousel',
+                pageBuilder: (context, state) =>
+                    NoTransitionPage(child: PageViewInfinityCarousel()),
+              )
+            ]),
       ],
     ),
   ],

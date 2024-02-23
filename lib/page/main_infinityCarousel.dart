@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sample/config/static_list_config.dart';
 import 'package:go_router/go_router.dart';
 
-class MainHome extends ConsumerWidget {
-  const MainHome({super.key});
+class MainInfinityCarousel extends ConsumerWidget {
+  const MainInfinityCarousel({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +22,7 @@ class MainHome extends ConsumerWidget {
                 child: SingleChildScrollView(
                   child: Wrap(
                     runSpacing: 25,
-                    children: StaticListConfig.DemoList.map(
+                    children: StaticListConfig.CarouselDemoList.map(
                       (demo) => GestureDetector(
                         onTap: () => context.push(demo['path']),
                         child: FractionallySizedBox(
