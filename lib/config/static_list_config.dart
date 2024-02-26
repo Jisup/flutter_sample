@@ -8,6 +8,10 @@ class StaticListConfig {
       'path': '/InfinityCarousel',
       'text': 'InfinityCarousel Demo',
     },
+    {
+      'path': '/OAuth',
+      'text': 'OAuth Demo',
+    }
   ];
   static final List<dynamic> InfinityScrollDemoList = [
     {
@@ -33,5 +37,13 @@ class StaticListConfig {
       'path': '/InfinityCarousel/PageView',
       'text': 'with PageView Widget',
     },
+  ];
+
+  static final List<dynamic> OAuthDemoList = [
+    {
+      'type': 'kakao',
+      'path': '/OAuth/Kakao',
+      'asset': 'lib/page/OAuth/kakao_login/kakao_login_medium_wide.png',
+    }
   ];
 }
