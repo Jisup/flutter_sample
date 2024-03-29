@@ -50,7 +50,7 @@ GoRouter mainRouter = GoRouter(
               path: 'FlatList',
               name: 'FlatList_Library_InfinityScroll',
               pageBuilder: (context, state) =>
-                  NoTransitionPage(child: FlatListInfinityScrll()),
+                  NoTransitionPage(child: FlatListInfinityScroll()),
             ),
           ],
         ),

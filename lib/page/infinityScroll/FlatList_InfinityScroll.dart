@@ -8,15 +8,16 @@ import 'package:flutter_sample/util/dio_instance.dart';
 
 final photoListProvider = StateProvider((ref) => <Photo>[]);
 
-class FlatListInfinityScrll extends ConsumerStatefulWidget {
-  const FlatListInfinityScrll({super.key});
+class FlatListInfinityScroll extends ConsumerStatefulWidget {
+  const FlatListInfinityScroll({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _FlatListInfinityScrllState();
+      _FlatListInfinityScrollState();
 }
 
-class _FlatListInfinityScrllState extends ConsumerState<FlatListInfinityScrll> {
+class _FlatListInfinityScrollState
+    extends ConsumerState<FlatListInfinityScroll> {
   double pullHeight = 0.0;
   double contentHeight = 200.0;
   double scrollVelocity = 2.4;
@@ -49,7 +50,7 @@ class _FlatListInfinityScrllState extends ConsumerState<FlatListInfinityScrll> {
     }
   }
 
-  _FlatListInfinityScrllState() {
+  _FlatListInfinityScrollState() {
     startIdx = 0;
     endIdx = 20;
     _fetchPhotos();
