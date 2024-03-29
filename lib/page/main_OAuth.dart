@@ -5,20 +5,21 @@ import 'package:flutter_sample/page/OAuth/kakao/kakao_login.dart';
 import 'package:flutter_sample/page/OAuth/naver/naver_login.dart';
 import 'package:flutter_sample/util/main_router.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class MainOAuth extends ConsumerWidget {
   const MainOAuth({super.key});
 
-  void OAuthClick(String type, String path) {
+  void OAuthClick(String type, String path) async {
     var context = navigatorkey.currentContext;
     switch (type) {
       case 'kakao':
-        KakaoLogin();
-        context?.go('/OAuth/Kakao');
+        User? user = await KakaoLogin();
+        context?.push('/OAuth/Kakao', extra: user);
         break;
       case 'naver':
         NaverLogin();
-        context?.go('OAuth/Naver');
+        context?.push('OAuth/Naver');
         break;
     }
   }

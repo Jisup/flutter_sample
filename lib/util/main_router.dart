@@ -10,6 +10,7 @@ import 'package:flutter_sample/page/main_infinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/ScrollController_InfinityScroll.dart';
 import 'package:flutter_sample/main_home.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 GlobalKey<NavigatorState> navigatorkey = GlobalKey<NavigatorState>();
 
@@ -76,8 +77,8 @@ GoRouter mainRouter = GoRouter(
             GoRoute(
               path: 'Kakao',
               name: 'Kakao_OAuth',
-              pageBuilder: (context, state) =>
-                  NoTransitionPage(child: KakaoOAuth()),
+              pageBuilder: (context, state) => NoTransitionPage(
+                  child: KakaoOAuth(user: state.extra as User?)),
             )
           ],
         ),

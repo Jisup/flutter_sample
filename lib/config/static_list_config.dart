@@ -43,7 +43,7 @@ class StaticListConfig {
     {
       'type': 'kakao',
       'path': '/OAuth/Kakao',
-      'asset': 'lib/page/OAuth/kakao_login/kakao_login_medium_wide.png',
+      'asset': 'lib/page/OAuth/kakao/assets/kakao_login_medium_wide.png',
     }
   ];
 }
