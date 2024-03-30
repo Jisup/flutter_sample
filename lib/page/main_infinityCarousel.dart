@@ -10,6 +10,7 @@ class MainInfinityCarousel extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(),
         body: LayoutBuilder(builder:
             (BuildContext childContext, BoxConstraints viewportConstraint) {
           return ConstrainedBox(
