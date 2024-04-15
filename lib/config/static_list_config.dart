@@ -11,7 +11,11 @@ class StaticListConfig {
     {
       'path': '/OAuth',
       'text': 'OAuth Demo',
-    }
+    },
+    {
+      'path': '/animation',
+      'text': 'Animation Demo',
+    },
   ];
   static final List<dynamic> InfinityScrollDemoList = [
     {
@@ -44,6 +48,12 @@ class StaticListConfig {
       'type': 'kakao',
       'path': '/OAuth/Kakao',
       'asset': 'lib/page/OAuth/kakao/assets/kakao_login_medium_wide.png',
+    }
+  ];
+  static final List<dynamic> animationDemoList = [
+    {
+      'path': '/animation/AnimatedAlign',
+      'text': 'AnimatedAlign : 정렬 변화',
     }
   ];
 }

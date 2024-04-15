@@ -70,6 +70,8 @@ flutter:
     - lib/page/OAuth/kakao/assets/kakao_login_large_wide.png
     - lib/page/OAuth/kakao/assets/kakao_login_medium_narrow.png
     - lib/page/OAuth/kakao/assets/kakao_login_medium_wide.png
+    - lib/page/animation/assets/flutter_logo.png
+    - lib/page/animation/assets/sample.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
