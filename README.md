@@ -22,4 +22,8 @@ Repository that implements samples or Demo, Using Flutter Official Documents
 
 # Widget
 
+- [Animation, 애니메이션](https://github.com/Jisup/flutter_sample/tree/main/lib/page/animation)
+
+> Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구현을 목적으로 작성되었습니다. 위치/스타일/속성 값을 다루는 애니메이션 위젯과, 부모/자식 또는 서로 다른 두 컴포넌트를 위한 애니메이션 위젯으로 구분됩니다.
+
 </br>

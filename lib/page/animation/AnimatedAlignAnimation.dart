@@ -66,10 +66,11 @@ class _AnimatedAlignAnimationState
                       child: GestureDetector(
                         onTap: () => setState(() => isClicked = !isClicked),
                         child: Image.asset(
-                          // 'lib/page/animation/assets/flutter_logo.png',
-                          'lib/page/animation/assets/sample.png',
+                          'lib/page/animation/assets/flutter_logo.png',
+                          // 'lib/page/animation/assets/sample.png',
                           fit: BoxFit.contain,
-                          width: MediaQuery.of(context).size.width / 4,
+                          width: MediaQuery.of(context).size.width / 8,
+                          // width: MediaQuery.of(context).size.width / 4,
                         ),
                       ),
                     ),

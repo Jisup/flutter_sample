@@ -9,7 +9,7 @@ Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구�
 - AnimatedAlign : 정렬 변화
 
   - Alignment 속성을 활용하여, 자식 요소의 위치를 변경하는 애니메이션을 적용한다.
-  - <Image width="30%" src="">
+  - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/2881912a-0b8b-4563-a2a2-c1b78153136a">
 
 ### 스타일
 
