@@ -54,6 +54,14 @@ class StaticListConfig {
     {
       'path': '/animation/AnimatedAlign',
       'text': 'AnimatedAlign : 정렬 변화',
-    }
+    },
+    {
+      'path': '/animation/AnimatedPadding',
+      'text': 'AnimatedPadding : 여백 변화',
+    },
+    {
+      'path': '/animation/AnimatedContainer',
+      'text': 'AnimatedContainer : 위젯 변화',
+    },
   ];
 }

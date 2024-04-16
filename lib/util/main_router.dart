@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/page/OAuth/kakao/Kakao_OAuth.dart';
 import 'package:flutter_sample/page/animation/AnimatedAlignAnimation.dart';
+import 'package:flutter_sample/page/animation/AnimatedContainerAnimation.dart';
+import 'package:flutter_sample/page/animation/AnimatedPaddingAnimation.dart';
 import 'package:flutter_sample/page/infinityCarousel/PageView_Carousel.dart';
 import 'package:flutter_sample/page/infinityScroll/FlatList_InfinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/InfinityScrollPagination_infinityScroll.dart';
@@ -97,7 +99,19 @@ GoRouter mainRouter = GoRouter(
               name: 'AnimatedAlign_animation',
               pageBuilder: (context, state) =>
                   const NoTransitionPage(child: AnimatedAlignAnimation()),
-            )
+            ),
+            GoRoute(
+              path: 'AnimatedPadding',
+              name: 'AnimatedPadding_animation',
+              pageBuilder: (context, state) =>
+                  const NoTransitionPage(child: AnimatedPaddingAnimation()),
+            ),
+            GoRoute(
+              path: 'AnimatedContainer',
+              name: 'AnimatedContainer_animation',
+              pageBuilder: (context, state) =>
+                  const NoTransitionPage(child: AnimatedContainerAnimation()),
+            ),
           ],
         ),
       ],
