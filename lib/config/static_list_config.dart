@@ -63,5 +63,23 @@ class StaticListConfig {
       'path': '/animation/AnimatedContainer',
       'text': 'AnimatedContainer : 위젯 변화',
     },
+    {
+      'path': '/animation/AnimatedPositioned',
+      'text': 'AnimatedPositioned : 위치 변화',
+    },
+    {
+      'path': '/animation/SlideTransition',
+      'text': 'SlideTransition : 위치 변화',
+    },
+  ];
+  static final List<dynamic> slideTransitionAnimationDemoList = [
+    {
+      'path': '/animation/SlideTransition/basicExample',
+      'text': '기본 애니메이션 예제 (위치 이동)',
+    },
+    {
+      'path': '/animation/SlideTransition/numberChangeExample',
+      'text': '숫자 애니메이션 예제 (자동차 계기판)',
+    },
   ];
 }

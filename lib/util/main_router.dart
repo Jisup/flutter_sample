@@ -3,6 +3,10 @@ import 'package:flutter_sample/page/OAuth/kakao/Kakao_OAuth.dart';
 import 'package:flutter_sample/page/animation/AnimatedAlignAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedContainerAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedPaddingAnimation.dart';
+import 'package:flutter_sample/page/animation/AnimatedPositionedAnimation.dart';
+import 'package:flutter_sample/page/animation/SlideTransition/basicExample_SlideTransition.dart';
+import 'package:flutter_sample/page/animation/SlideTransition/numberChangeExample_SlideTransition.dart';
+import 'package:flutter_sample/page/animation/SlideTransitionAnimation.dart';
 import 'package:flutter_sample/page/infinityCarousel/PageView_Carousel.dart';
 import 'package:flutter_sample/page/infinityScroll/FlatList_InfinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/InfinityScrollPagination_infinityScroll.dart';
@@ -112,6 +116,31 @@ GoRouter mainRouter = GoRouter(
               pageBuilder: (context, state) =>
                   const NoTransitionPage(child: AnimatedContainerAnimation()),
             ),
+            GoRoute(
+              path: 'AnimatedPositioned',
+              name: 'AnimatedPositioned_animation',
+              pageBuilder: (context, state) =>
+                  const NoTransitionPage(child: AnimatedPositionedAnimation()),
+            ),
+            GoRoute(
+                path: 'SlideTransition',
+                name: 'SlideTransition_animation',
+                pageBuilder: (context, state) =>
+                    const NoTransitionPage(child: SlideTransitionAnimation()),
+                routes: [
+                  GoRoute(
+                    path: 'basicExample',
+                    name: 'basicExample_SlideTransition',
+                    pageBuilder: (context, state) => const NoTransitionPage(
+                        child: BasicExampleSlideTransition()),
+                  ),
+                  GoRoute(
+                    path: 'numberChangeExample',
+                    name: 'numberChangeExample_SlideTransition',
+                    pageBuilder: (context, state) => const NoTransitionPage(
+                        child: NumberChangeExampleSlideTransition()),
+                  ),
+                ]),
           ],
         ),
       ],
