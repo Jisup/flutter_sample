@@ -71,6 +71,10 @@ class StaticListConfig {
       'path': '/animation/SlideTransition',
       'text': 'SlideTransition : 위치 변화',
     },
+    {
+      'path': '/animation/AnimatedSlide',
+      'text': 'AnimatedSlide : 위치 변화',
+    },
   ];
   static final List<dynamic> slideTransitionAnimationDemoList = [
     {

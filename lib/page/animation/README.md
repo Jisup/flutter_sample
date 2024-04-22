@@ -51,6 +51,15 @@ Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구�
       - SlideTransition을 활용한 계기판의 숫자 변화 애니메이션 예제
       - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/c9eb9636-72e5-4028-aa09-79e36e97fe89">
 
+- AnimatedSlide : 위치 변화 [reference](https://api.flutter.dev/flutter/widgets/AnimatedSlide-class.html)
+
+  - AnimatedSlideAnimation.dart
+  - Offset과 X축, Y축의 Slider를 조절하여 요소의 위치를 변경합니다.
+  - 내부에서 활용되는 Offset의 기준은 1이며, 하위 자식 요소의 크기를 기준으로 잡는다. 만약 dx에 0.25의 Offset을 가지고 있다면, 전체 너비의 25% 만큼 수평 변환이 일어나게 된다.
+  - 화면 내부 스크롤러의 위치에 따라 요소를 변경하는 예제에 사용될 수 있습니다.
+
+  - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/5602b46a-af3b-4967-9115-63ceffc116a3">
+
 ### 스타일
 
 ### 속성

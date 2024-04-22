@@ -4,6 +4,7 @@ import 'package:flutter_sample/page/animation/AnimatedAlignAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedContainerAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedPaddingAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedPositionedAnimation.dart';
+import 'package:flutter_sample/page/animation/AnimatedSlideAnimation.dart';
 import 'package:flutter_sample/page/animation/SlideTransition/basicExample_SlideTransition.dart';
 import 'package:flutter_sample/page/animation/SlideTransition/numberChangeExample_SlideTransition.dart';
 import 'package:flutter_sample/page/animation/SlideTransitionAnimation.dart';
@@ -141,6 +142,12 @@ GoRouter mainRouter = GoRouter(
                         child: NumberChangeExampleSlideTransition()),
                   ),
                 ]),
+            GoRoute(
+              path: 'AnimatedSlide',
+              name: 'AnimatedSlide_animation',
+              pageBuilder: (context, state) =>
+                  const NoTransitionPage(child: AnimatedSlideAnimation()),
+            ),
           ],
         ),
       ],
