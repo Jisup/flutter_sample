@@ -51,6 +51,11 @@ class StaticListConfig {
     }
   ];
   static final List<dynamic> animationDemoList = [
+    // ### 스타일 및 속성
+    {
+      'path': null,
+      'text': '----- 스타일 및 속성 -----',
+    },
     {
       'path': '/animation/AnimatedAlign',
       'text': 'AnimatedAlign : 정렬 변화',
@@ -63,9 +68,14 @@ class StaticListConfig {
       'path': '/animation/AnimatedContainer',
       'text': 'AnimatedContainer : 위젯 변화',
     },
+    // ### 위치 및 크기
+    {
+      'path': null,
+      'text': '----- 위치 및 크기 -----',
+    },
     {
       'path': '/animation/AnimatedPositioned',
-      'text': 'AnimatedPositioned : 위치 변화',
+      'text': 'AnimatedPositioned : 위젯(위치, 크기) 변화',
     },
     {
       'path': '/animation/SlideTransition',
@@ -74,6 +84,25 @@ class StaticListConfig {
     {
       'path': '/animation/AnimatedSlide',
       'text': 'AnimatedSlide : 위치 변화',
+    },
+    // ### 부모와 자식
+    {
+      'path': null,
+      'text': '----- 부모와 자식 -----',
+    },
+    // ### 서로 다른 두 컴포넌트
+    {
+      'path': null,
+      'text': '----- 서로 다른 두 컴포넌트 -----',
+    },
+    // ### 빌더
+    {
+      'path': null,
+      'text': '----- 빌더 -----',
+    },
+    {
+      'path': '/animation/AnimatedBuilder',
+      'text': 'AnimatedBuilder : 모든 변화',
     },
   ];
   static final List<dynamic> slideTransitionAnimationDemoList = [
@@ -84,6 +113,12 @@ class StaticListConfig {
     {
       'path': '/animation/SlideTransition/numberChangeExample',
       'text': '숫자 애니메이션 예제 (자동차 계기판)',
+    },
+  ];
+  static final List<dynamic> animatedBuilderAnimationDemoList = [
+    {
+      'path': '/animation/AnimatedBuilder/rotationExample',
+      'text': '회전 애니메이션 예제',
     },
   ];
 }

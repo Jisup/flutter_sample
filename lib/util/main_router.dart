@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/page/OAuth/kakao/Kakao_OAuth.dart';
 import 'package:flutter_sample/page/animation/AnimatedAlignAnimation.dart';
+import 'package:flutter_sample/page/animation/AnimatedBuilder/rotationExample_AnimatedBuilder.dart';
+import 'package:flutter_sample/page/animation/AnimatedBuilderAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedContainerAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedPaddingAnimation.dart';
 import 'package:flutter_sample/page/animation/AnimatedPositionedAnimation.dart';
@@ -12,7 +14,7 @@ import 'package:flutter_sample/page/infinityCarousel/PageView_Carousel.dart';
 import 'package:flutter_sample/page/infinityScroll/FlatList_InfinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/InfinityScrollPagination_infinityScroll.dart';
 import 'package:flutter_sample/page/infinityScroll/Listener_InfinityScroll.dart';
-import 'package:flutter_sample/page/mainAnimation.dart';
+import 'package:flutter_sample/page/main_animation.dart';
 import 'package:flutter_sample/page/main_OAuth.dart';
 import 'package:flutter_sample/page/main_infinityCarousel.dart';
 import 'package:flutter_sample/page/main_infinityScroll.dart';
@@ -99,6 +101,7 @@ GoRouter mainRouter = GoRouter(
           pageBuilder: (context, state) =>
               const NoTransitionPage(child: MainAnimation()),
           routes: [
+            // ### 스타일 및 속성
             GoRoute(
               path: 'AnimatedAlign',
               name: 'AnimatedAlign_animation',
@@ -117,6 +120,7 @@ GoRouter mainRouter = GoRouter(
               pageBuilder: (context, state) =>
                   const NoTransitionPage(child: AnimatedContainerAnimation()),
             ),
+            // ### 위치 및 크기
             GoRoute(
               path: 'AnimatedPositioned',
               name: 'AnimatedPositioned_animation',
@@ -147,6 +151,23 @@ GoRouter mainRouter = GoRouter(
               name: 'AnimatedSlide_animation',
               pageBuilder: (context, state) =>
                   const NoTransitionPage(child: AnimatedSlideAnimation()),
+            ),
+            // ### 부모와 자식
+            // ### 서로 다른 두 컴포넌트
+            // ### 빌더
+            GoRoute(
+              path: 'AnimatedBuilder',
+              name: 'AnimatedBuilder_animation',
+              pageBuilder: (context, state) =>
+                  const NoTransitionPage(child: AnimatedBuilderAnimation()),
+              routes: [
+                GoRoute(
+                  path: 'rotationExample',
+                  name: 'rotationExample_AnimatedBuilder',
+                  pageBuilder: (context, state) => const NoTransitionPage(
+                      child: RotationExampleAnimatedBuilder()),
+                ),
+              ],
             ),
           ],
         ),

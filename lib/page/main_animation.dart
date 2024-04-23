@@ -26,12 +26,22 @@ class MainAnimation extends ConsumerWidget {
                     children: StaticListConfig.animationDemoList
                         .map(
                           (demo) => GestureDetector(
-                            onTap: () => context.push(demo['path']),
+                            onTap: demo['path'] != null
+                                ? () => context.push(demo['path'])
+                                : null,
                             child: FractionallySizedBox(
                               widthFactor: 1,
                               child: Container(
                                 alignment: Alignment.center,
-                                child: Text(demo['text']),
+                                child: Text(
+                                  demo['text'],
+                                  style: demo['path'] == null
+                                      ? const TextStyle(
+                                          color: Colors.blue,
+                                          fontWeight: FontWeight.bold,
+                                        )
+                                      : null,
+                                ),
                               ),
                             ),
                           ),

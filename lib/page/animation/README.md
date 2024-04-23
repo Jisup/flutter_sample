@@ -4,7 +4,7 @@ Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구�
 
 각 Widge은 자신이 수행할 수 있는 행위를 간단하게 매핑하여 소개합니다.
 
-### 위치 및 크기
+### 스타일 및 속성
 
 - AnimatedAlign : 정렬(위치) 변화 [reference](https://api.flutter.dev/flutter/widgets/AnimatedAlign-class.html)
 
@@ -25,6 +25,8 @@ Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구�
   - AnimatedAlign 및 AnimatedPadding을 하위 집합으로 포함하고 있다.
   - 단, 부모 요소에 위치를 지정하는 위젯(Center Widget ...)이 포함해야 크기에 대한 변화를 확인할 수 있다.
   - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/3587f312-c3cb-4138-9866-59d7994e7aff">
+
+### 위치 및 크기
 
 - AnimatedPositioned : 위젯(크기, 위치) 변화 [reference](https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html)
 
@@ -60,13 +62,23 @@ Flutter에서 활용 중인 Animation Widget에 대한 간단한 설명과 구�
 
   - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/5602b46a-af3b-4967-9115-63ceffc116a3">
 
-### 스타일
-
-### 속성
-
-### 부모/자식
+### 부모와 자식
 
 ### 서로 다른 두 컴포넌트
+
+### 빌더
+
+- AnimatedBuilder : 모든 변화 [reference](https://api.flutter.dev/flutter/widgets/AnimatedSlide-class.html)
+
+  - AnimatedBuilderAnimation.dart
+  - AnimatedBuilder는 애니메이션 제작을 위한 범용 위젯으로, 더 큰 빌드 기능의 일부로 애니메이션을 포함하려는 더 복잡한 위젯에 유용합니다.
+  - 단, 추가 상태가 없는 경우 AnimatedWidget이 적합합니다.
+  - AnimatedBuilder의 자식 요소를 builder 함수의 자식으로 동일하게 할당하면 렌더링을 최적화 할 수 있습니다.
+  - 단, 자식을 builder 함수의 자식 요소로 전달하지 않으면 그 요소는 틱마다 다시 빌드됩니다. 물론 선택 사항에 해당되지만, 성능을 크게 향상시킬 수 있는 좋은 습관입니다.
+  - Listenable의 모든 하위 유형(ChangeNotifier, ValueNotifier)을 사용하여 재구축을 트리거 할 수 있습니다.
+  - ListenableBuilder과 구현은 동일하지만, Animation을 지속적으로 관리(청취)하지 않는 경우, 가독성을 높이기 위해 ListenableBuilder를 사용하는 것이 좋습니다.
+
+  - <Image width="30%" src="https://github.com/Jisup/flutter_sample/assets/49368118/49d88c97-0b1a-4360-8beb-a30338f2b6e4">
 
 ### 성능 비교
 
